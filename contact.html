@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | DeviSree Bank</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#f6f8fb;
+    color:#173452;
+}
+
+/* NAVBAR */
+
+nav{
+    height:76px;
+    background:white;
+    border-bottom:1px solid #e6ebf1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:#0b2d53;
+    font-size:19px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:40px;
+    height:40px;
+    border-radius:11px;
+    background:linear-gradient(135deg,#0b315c,#1769aa);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#647487;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:700;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#1769aa;
+}
+
+.login-btn{
+    background:#0b315c;
+    color:white !important;
+    padding:10px 17px;
+    border-radius:8px;
+}
+
+
+/* HERO */
+
+.hero{
+    background:
+        radial-gradient(circle at 80% 20%,rgba(46,133,202,.18),transparent 30%),
+        linear-gradient(135deg,#09284d,#0d4678);
+    color:white;
+    padding:75px 8%;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero-label{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:#9ed5f8;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:42px;
+    line-height:1.1;
+    margin-bottom:16px;
+}
+
+.hero p{
+    color:#c4d8e8;
+    font-size:12px;
+    line-height:1.8;
+    max-width:590px;
+}
+
+
+/* CONTENT */
+
+.container{
+    width:84%;
+    max-width:1150px;
+    margin:auto;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:22px;
+    margin-top:-35px;
+    position:relative;
+}
+
+
+/* INFO */
+
+.info-card,
+.form-card,
+.faq-card{
+    background:white;
+    border:1px solid #e3e9f0;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 12px 35px rgba(20,55,90,.06);
+}
+
+.info-card h2,
+.form-card h2{
+    color:#153657;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.info-card > p,
+.form-card > p{
+    color:#8591a0;
+    font-size:10px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+
+/* CONTACT ITEMS */
+
+.contact-item{
+    display:flex;
+    gap:13px;
+    padding:15px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.contact-item:last-child{
+    border-bottom:none;
+}
+
+.contact-icon{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:#edf5fb;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.contact-item strong{
+    display:block;
+    font-size:10px;
+    color:#39516a;
+    margin-bottom:4px;
+}
+
+.contact-item span{
+    color:#84909e;
+    font-size:9px;
+    line-height:1.5;
+}
+
+
+/* FORM */
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    font-size:9px;
+    font-weight:700;
+    color:#455a70;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:1px solid #dce3eb;
+    border-radius:8px;
+    padding:11px 12px;
+    outline:none;
+    font-family:inherit;
+    font-size:10px;
+    color:#344b62;
+    background:white;
+}
+
+.form-group textarea{
+    min-height:105px;
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#1769aa;
+    box-shadow:0 0 0 3px rgba(23,105,170,.07);
+}
+
+.submit-btn{
+    width:100%;
+    height:43px;
+    border:none;
+    border-radius:8px;
+    background:#0b315c;
+    color:white;
+    font-family:inherit;
+    font-size:10px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.submit-btn:hover{
+    background:#1769aa;
+    transform:translateY(-1px);
+}
+
+
+/* SUPPORT */
+
+.support{
+    margin:35px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:22px;
+}
+
+.section-title span{
+    color:#1769aa;
+    font-size:9px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.section-title h2{
+    color:#173654;
+    font-size:24px;
+    margin-top:7px;
+}
+
+
+/* SUPPORT CARDS */
+
+.support-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.support-card{
+    background:white;
+    border:1px solid #e4e9ef;
+    border-radius:14px;
+    padding:22px;
+    text-align:center;
+    transition:.25s;
+}
+
+.support-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(15,52,85,.08);
+}
+
+.support-icon{
+    width:45px;
+    height:45px;
+    margin:0 auto 13px;
+    border-radius:12px;
+    background:#edf5fb;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.support-card h3{
+    color:#36506a;
+    font-size:11px;
+    margin-bottom:6px;
+}
+
+.support-card p{
+    color:#8995a3;
+    font-size:8px;
+    line-height:1.6;
+}
+
+
+/* FAQ */
+
+.faq-card{
+    margin-bottom:40px;
+}
+
+.faq-card h2{
+    margin-bottom:20px;
+}
+
+.faq{
+    border-bottom:1px solid #e9edf2;
+}
+
+.faq:last-child{
+    border-bottom:none;
+}
+
+.faq button{
+    width:100%;
+    background:none;
+    border:none;
+    padding:15px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    color:#3d536a;
+    font-family:inherit;
+    font-size:10px;
+    font-weight:700;
+    text-align:left;
+}
+
+.answer{
+    display:none;
+    color:#8995a3;
+    font-size:9px;
+    line-height:1.7;
+    padding:0 0 15px;
+}
+
+.answer.open{
+    display:block;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#09284d;
+    color:white;
+    padding:30px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-logo{
+    font-weight:800;
+    font-size:15px;
+}
+
+footer p{
+    color:#9bb1c5;
+    font-size:8px;
+}
+
+.social{
+    display:flex;
+    gap:9px;
+}
+
+.social a{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    color:#c4d7e8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}
+
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    background:#0d3156;
+    color:white;
+    padding:13px 17px;
+    border-radius:9px;
+    font-size:9px;
+    opacity:0;
+    transform:translateY(20px);
+    transition:.3s;
+    z-index:50;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .support-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .container{
+        width:92%;
+    }
+
+    .hero{
+        padding:55px 6%;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+DeviSree Bank
+
+</div>
+
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="accounts.html">Accounts</a>
+
+<a href="services.html">Services</a>
+
+<a href="contact.html" class="active">Contact</a>
+
+<a href="login.html" class="login-btn">
+Login
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-label">
+<i class="fa-solid fa-headset"></i>
+DEVI SREE CUSTOMER SUPPORT
+</div>
+
+<h1>
+We're here to help.
+</h1>
+
+<p>
+Whether you have a question about your account, need assistance
+with a transaction, or simply want to know more about our services,
+the DeviSree Bank support team is ready to assist you.
+</p>
+
+</div>
+
+</section>
+
+
+
+<main class="container">
+
+
+<!-- CONTACT + FORM -->
+
+<div class="contact-grid">
+
+
+<!-- INFO -->
+
+<div class="info-card">
+
+<h2>Get in touch</h2>
+
+<p>
+Connect with our support team through any of the channels below.
+</p>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+<i class="fa-solid fa-phone"></i>
+</div>
+
+<div>
+
+<strong>Customer Care</strong>
+
+<span>
+1800 123 4567<br>
+Available 24 hours a day
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+<i class="fa-solid fa-envelope"></i>
+</div>
+
+<div>
+
+<strong>Email Support</strong>
+
+<span>
+support@devisreebank.com<br>
+Response within one business day
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+<i class="fa-solid fa-location-dot"></i>
+</div>
+
+<div>
+
+<strong>Corporate Office</strong>
+
+<span>
+DeviSree Financial Centre<br>
+Bengaluru, Karnataka, India
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+<i class="fa-solid fa-clock"></i>
+</div>
+
+<div>
+
+<strong>Branch Hours</strong>
+
+<span>
+Monday – Saturday<br>
+9:30 AM – 4:30 PM
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- FORM -->
+
+<div class="form-card">
+
+<h2>Send us a message</h2>
+
+<p>
+Have a question? Fill in the form and our team will get back to you.
+</p>
+
+
+<form id="contactForm">
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="email"
+placeholder="you@example.com"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="+91 XXXXX XXXXX"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Subject</label>
+
+<select id="subject">
+
+<option>General Enquiry</option>
+<option>Account Support</option>
+<option>Card Support</option>
+<option>Transaction Issue</option>
+<option>Digital Banking</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Your Message</label>
+
+<textarea
+id="message"
+placeholder="How can we help you?"
+required
+></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="submit-btn"
+>
+
+<i class="fa-solid fa-paper-plane"></i>
+&nbsp; Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+
+<!-- SUPPORT -->
+
+<section class="support">
+
+<div class="section-title">
+
+<span>Support when you need it</span>
+
+<h2>We're always within reach</h2>
+
+</div>
+
+
+<div class="support-grid">
+
+
+<div class="support-card">
+
+<div class="support-icon">
+<i class="fa-solid fa-mobile-screen"></i>
+</div>
+
+<h3>Digital Banking</h3>
+
+<p>
+Get assistance with online banking, mobile access,
+transfers and account services.
+</p>
+
+</div>
+
+
+<div class="support-card">
+
+<div class="support-icon">
+<i class="fa-solid fa-credit-card"></i>
+</div>
+
+<h3>Card Assistance</h3>
+
+<p>
+Need help with your debit or credit card?
+Our support team is ready to assist.
+</p>
+
+</div>
+
+
+<div class="support-card">
+
+<div class="support-icon">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<h3>Security Centre</h3>
+
+<p>
+Report suspicious activity and learn how to
+keep your digital banking secure.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- FAQ -->
+
+<div class="faq-card">
+
+<h2>Frequently Asked Questions</h2>
+
+
+<div class="faq">
+
+<button>
+How do I reset my banking password?
+<i class="fa-solid fa-chevron-down"></i>
+</button>
+
+<div class="answer">
+You can reset your password through the secure login
+screen by selecting the password assistance option.
+</div>
+
+</div>
+
+
+<div class="faq">
+
+<button>
+How can I transfer money?
+<i class="fa-solid fa-chevron-down"></i>
+</button>
+
+<div class="answer">
+Sign in to your DeviSree Bank account, select Transfer Money,
+choose a beneficiary, enter the amount and confirm the transfer.
+</div>
+
+</div>
+
+
+<div class="faq">
+
+<button>
+How can I report a suspicious transaction?
+<i class="fa-solid fa-chevron-down"></i>
+</button>
+
+<div class="answer">
+Contact customer support immediately and provide the relevant
+transaction details. Never share your password or OTP.
+</div>
+
+</div>
+
+
+<div class="faq">
+
+<button>
+Can I access digital banking 24/7?
+<i class="fa-solid fa-chevron-down"></i>
+</button>
+
+<div class="answer">
+Yes. DeviSree digital banking services are designed to provide
+secure account access whenever you need it.
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div>
+
+<div class="footer-logo">
+DeviSree Bank
+</div>
+
+<p>
+Banking made smarter. Security made stronger.
+</p>
+
+</div>
+
+
+<div class="social">
+
+<a href="#">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+</div>
+
+</footer>
+
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* CONTACT FORM */
+
+document
+.getElementById("contactForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    if(
+        name === "" ||
+        email === "" ||
+        phone === "" ||
+        message === ""
+    ){
+
+        showToast("Please complete all required fields.");
+
+        return;
+
+    }
+
+
+    showToast(
+        "Thank you. Your message has been submitted successfully."
+    );
+
+
+    this.reset();
+
+});
+
+
+/* FAQ */
+
+document
+.querySelectorAll(".faq button")
+.forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+        const answer =
+            this.nextElementSibling;
+
+        answer.classList.toggle("open");
+
+        const icon =
+            this.querySelector("i");
+
+        if(answer.classList.contains("open")){
+
+            icon.className =
+                "fa-solid fa-chevron-up";
+
+        }else{
+
+            icon.className =
+                "fa-solid fa-chevron-down";
+
+        }
+
+    });
+
+});
+
+
+/* TOAST */
+
+function showToast(text){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = text;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+</script>
+
+</body>
+</html>

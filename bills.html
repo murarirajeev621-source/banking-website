@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bill Payments | DeviSree Bank</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#f6f8fb;
+    color:#14213d;
+}
+
+nav{
+    height:76px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    border-bottom:1px solid #e9edf3;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:21px;
+    font-weight:800;
+    color:#0c2d57;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0c2d57,#1769aa);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.back{
+    color:#1769aa;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+}
+
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:55px 25px 80px;
+}
+
+.heading{
+    margin-bottom:35px;
+}
+
+.heading span{
+    color:#1769aa;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.heading h1{
+    color:#0c2d57;
+    font-size:42px;
+    margin:10px 0;
+}
+
+.heading p{
+    color:#748196;
+    font-size:14px;
+}
+
+/* MAIN */
+
+.layout{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e6ebf1;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 12px 35px rgba(12,45,87,.05);
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.card-title i{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:#eaf3fb;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.card-title h2{
+    font-size:19px;
+    color:#0c2d57;
+}
+
+/* BILL TYPES */
+
+.bill-types{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.bill-type{
+    border:1px solid #e0e6ee;
+    border-radius:13px;
+    padding:15px 10px;
+    background:white;
+    cursor:pointer;
+    text-align:center;
+    transition:.25s;
+}
+
+.bill-type:hover{
+    border-color:#1769aa;
+    transform:translateY(-2px);
+}
+
+.bill-type.active{
+    background:#edf6fd;
+    border-color:#1769aa;
+    box-shadow:0 0 0 2px rgba(23,105,170,.08);
+}
+
+.bill-type i{
+    display:block;
+    color:#1769aa;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.bill-type span{
+    color:#536174;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* FORM */
+
+.form-group{
+    margin-bottom:19px;
+}
+
+label{
+    display:block;
+    color:#45546a;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+input,
+select{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #dce3ec;
+    border-radius:10px;
+    outline:none;
+    font-family:inherit;
+    font-size:13px;
+    color:#24364d;
+    background:#fff;
+    transition:.25s;
+}
+
+input:focus,
+select:focus{
+    border-color:#1769aa;
+    box-shadow:0 0 0 3px rgba(23,105,170,.08);
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.amount-box{
+    position:relative;
+}
+
+.amount-box span{
+    position:absolute;
+    left:14px;
+    top:13px;
+    color:#64748b;
+    font-weight:700;
+}
+
+.amount-box input{
+    padding-left:30px;
+}
+
+.pay-btn{
+    width:100%;
+    border:none;
+    background:#0c2d57;
+    color:white;
+    padding:15px;
+    border-radius:11px;
+    font-family:inherit;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.pay-btn:hover{
+    background:#1769aa;
+    transform:translateY(-2px);
+}
+
+.security{
+    background:#f3f8fc;
+    border-radius:13px;
+    padding:16px;
+    margin-top:20px;
+    display:flex;
+    gap:12px;
+}
+
+.security i{
+    color:#1769aa;
+}
+
+.security p{
+    color:#728096;
+    font-size:11px;
+    line-height:1.6;
+}
+
+/* SUMMARY */
+
+.summary{
+    height:max-content;
+}
+
+.summary-top{
+    background:linear-gradient(135deg,#0c2d57,#1769aa);
+    color:white;
+    padding:23px;
+    border-radius:16px;
+    margin-bottom:22px;
+}
+
+.summary-top small{
+    color:#cbdceb;
+    font-size:11px;
+}
+
+.summary-top h2{
+    margin-top:7px;
+    font-size:27px;
+}
+
+.summary-list{
+    list-style:none;
+}
+
+.summary-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 0;
+    border-bottom:1px solid #edf0f4;
+    font-size:12px;
+}
+
+.summary-list span{
+    color:#7a8798;
+}
+
+.summary-list strong{
+    color:#263a52;
+    text-align:right;
+}
+
+.note{
+    margin-top:20px;
+    padding:13px;
+    background:#fff9e9;
+    border:1px solid #f0dfac;
+    border-radius:10px;
+    color:#806c34;
+    font-size:10px;
+    line-height:1.6;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(5,20,38,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:500;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    width:100%;
+    max-width:440px;
+    border-radius:24px;
+    padding:38px;
+    text-align:center;
+    animation:pop .35s ease;
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.9) translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.success-icon{
+    width:75px;
+    height:75px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#eaf8f0;
+    color:#19945b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+}
+
+.modal-box h2{
+    color:#0c2d57;
+    margin-bottom:9px;
+}
+
+.modal-box p{
+    color:#748196;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.reference{
+    background:#f5f7fa;
+    border-radius:11px;
+    padding:14px;
+    margin:20px 0;
+}
+
+.reference small{
+    display:block;
+    color:#8995a5;
+    font-size:10px;
+    margin-bottom:5px;
+}
+
+.reference strong{
+    color:#1769aa;
+    font-size:14px;
+}
+
+.done-btn{
+    width:100%;
+    border:none;
+    background:#0c2d57;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#0c2d57;
+    color:white;
+    padding:14px 18px;
+    border-radius:11px;
+    font-size:12px;
+    display:none;
+    z-index:800;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .heading h1{
+        font-size:34px;
+    }
+}
+
+@media(max-width:550px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    .page{
+        padding:40px 16px;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+    .bill-types{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+DeviSree Bank
+
+</div>
+
+<a href="services.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+&nbsp; Back to Services
+</a>
+
+</nav>
+
+
+<main class="page">
+
+<div class="heading">
+
+<span>Payments</span>
+
+<h1>Pay bills effortlessly.</h1>
+
+<p>
+Manage your everyday payments securely from one place.
+</p>
+
+</div>
+
+
+<div class="layout">
+
+<!-- PAYMENT FORM -->
+
+<div class="card">
+
+<div class="card-title">
+
+<i class="fa-solid fa-file-invoice-dollar"></i>
+
+<h2>Make a Payment</h2>
+
+</div>
+
+
+<!-- BILL TYPES -->
+
+<div class="bill-types">
+
+<button class="bill-type active" data-type="Electricity">
+<i class="fa-solid fa-bolt"></i>
+<span>Electricity</span>
+</button>
+
+<button class="bill-type" data-type="Mobile">
+<i class="fa-solid fa-mobile-screen-button"></i>
+<span>Mobile</span>
+</button>
+
+<button class="bill-type" data-type="Internet">
+<i class="fa-solid fa-wifi"></i>
+<span>Internet</span>
+</button>
+
+<button class="bill-type" data-type="Water">
+<i class="fa-solid fa-droplet"></i>
+<span>Water</span>
+</button>
+
+<button class="bill-type" data-type="DTH">
+<i class="fa-solid fa-tv"></i>
+<span>DTH</span>
+</button>
+
+<button class="bill-type" data-type="Insurance">
+<i class="fa-solid fa-shield-halved"></i>
+<span>Insurance</span>
+</button>
+
+</div>
+
+
+<form id="billForm">
+
+<div class="form-group">
+
+<label for="account">
+Pay From
+</label>
+
+<select id="account" required>
+
+<option value="">
+Select account
+</option>
+
+<option value="savings">
+Savings Account — ₹1,24,580.50
+</option>
+
+<option value="current">
+Current Account — ₹82,450.00
+</option>
+
+</select>
+
+</div>
+
+
+<div class="row">
+
+<div class="form-group">
+
+<label for="provider">
+Provider
+</label>
+
+<select id="provider" required>
+<option value="">Select provider</option>
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="customerNumber">
+Consumer / Customer ID
+</label>
+
+<input
+type="text"
+id="customerNumber"
+placeholder="Enter ID"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div class="form-group">
+
+<label for="amount">
+Payment Amount
+</label>
+
+<div class="amount-box">
+
+<span>₹</span>
+
+<input
+type="number"
+id="amount"
+placeholder="0.00"
+min="1"
+max="100000"
+step="0.01"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="paymentMode">
+Payment Mode
+</label>
+
+<select id="paymentMode" required>
+
+<option value="">
+Select mode
+</option>
+
+<option>UPI</option>
+
+<option>Debit Card</option>
+
+<option>Net Banking</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<button type="submit" class="pay-btn">
+
+Continue Payment
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+<div class="security">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<p>
+This is a simulated payment for the DeviSree Bank
+college project. No real payment or recharge will occur.
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="card summary">
+
+<div class="summary-top">
+
+<small>Available Balance</small>
+
+<h2>₹1,24,580.50</h2>
+
+</div>
+
+
+<h3 style="color:#0c2d57;font-size:16px;margin-bottom:8px;">
+Payment Summary
+</h3>
+
+
+<ul class="summary-list">
+
+<li>
+<span>Category</span>
+<strong id="summaryCategory">Electricity</strong>
+</li>
+
+<li>
+<span>Provider</span>
+<strong id="summaryProvider">—</strong>
+</li>
+
+<li>
+<span>Amount</span>
+<strong id="summaryAmount">₹0.00</strong>
+</li>
+
+<li>
+<span>Payment mode</span>
+<strong id="summaryMode">—</strong>
+</li>
+
+</ul>
+
+
+<div class="note">
+
+<i class="fa-solid fa-circle-info"></i>
+
+&nbsp;
+Payments are simulated locally and are not connected
+to any real utility provider.
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- SUCCESS MODAL -->
+
+<div class="modal" id="successModal">
+
+<div class="modal-box">
+
+<div class="success-icon">
+<i class="fa-solid fa-check"></i>
+</div>
+
+<h2>Payment Successful</h2>
+
+<p>
+Your simulated bill payment has been completed successfully.
+</p>
+
+<div class="reference">
+
+<small>PAYMENT REFERENCE ID</small>
+
+<strong id="referenceId">
+DSB-PAY-00000000
+</strong>
+
+</div>
+
+<p id="successDetails"></p>
+
+<br>
+
+<button class="done-btn" onclick="closeModal()">
+Done
+</button>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast">
+Please complete all required fields.
+</div>
+
+
+<script>
+
+/* PROVIDERS */
+
+const providers = {
+
+    Electricity:[
+        "DeviSree Power",
+        "State Electricity Board",
+        "City Power Services"
+    ],
+
+    Mobile:[
+        "DeviSree Mobile",
+        "Airtel",
+        "Jio",
+        "Vi"
+    ],
+
+    Internet:[
+        "DeviSree Broadband",
+        "Airtel Xstream",
+        "JioFiber",
+        "ACT Fibernet"
+    ],
+
+    Water:[
+        "City Water Services",
+        "Municipal Water Board"
+    ],
+
+    DTH:[
+        "DeviSree DTH",
+        "Tata Play",
+        "Dish TV",
+        "Airtel Digital TV"
+    ],
+
+    Insurance:[
+        "DeviSree Life Insurance",
+        "SecureLife Insurance",
+        "FutureShield Insurance"
+    ]
+
+};
+
+
+let selectedCategory = "Electricity";
+
+
+const billButtons =
+document.querySelectorAll(".bill-type");
+
+const provider =
+document.getElementById("provider");
+
+const amount =
+document.getElementById("amount");
+
+const paymentMode =
+document.getElementById("paymentMode");
+
+const summaryCategory =
+document.getElementById("summaryCategory");
+
+const summaryProvider =
+document.getElementById("summaryProvider");
+
+const summaryAmount =
+document.getElementById("summaryAmount");
+
+const summaryMode =
+document.getElementById("summaryMode");
+
+const form =
+document.getElementById("billForm");
+
+const modal =
+document.getElementById("successModal");
+
+const toast =
+document.getElementById("toast");
+
+
+/* LOAD PROVIDERS */
+
+function loadProviders(){
+
+    provider.innerHTML =
+        '<option value="">Select provider</option>';
+
+    providers[selectedCategory].forEach(function(item){
+
+        const option =
+            document.createElement("option");
+
+        option.value = item;
+        option.textContent = item;
+
+        provider.appendChild(option);
+
+    });
+
+}
+
+
+/* CATEGORY BUTTONS */
+
+billButtons.forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+        billButtons.forEach(function(btn){
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        selectedCategory =
+            button.dataset.type;
+
+        summaryCategory.textContent =
+            selectedCategory;
+
+        loadProviders();
+
+        summaryProvider.textContent = "—";
+
+    });
+
+});
+
+
+loadProviders();
+
+
+/* LIVE SUMMARY */
+
+provider.addEventListener("change",function(){
+
+    summaryProvider.textContent =
+        provider.value || "—";
+
+});
+
+
+amount.addEventListener("input",function(){
+
+    const value =
+        Number(amount.value) || 0;
+
+    summaryAmount.textContent =
+        "₹" +
+        value.toLocaleString("en-IN",{
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        });
+
+});
+
+
+paymentMode.addEventListener("change",function(){
+
+    summaryMode.textContent =
+        paymentMode.value || "—";
+
+});
+
+
+/* FORM SUBMISSION */
+
+form.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+
+    const account =
+        document.getElementById("account").value;
+
+    const providerValue =
+        provider.value;
+
+    const customer =
+        document.getElementById("customerNumber").value.trim();
+
+    const amountValue =
+        Number(amount.value);
+
+    const mode =
+        paymentMode.value;
+
+
+    if(
+        !account ||
+        !providerValue ||
+        !customer ||
+        !amountValue ||
+        !mode
+    ){
+
+        showToast(
+            "Please complete all required fields."
+        );
+
+        return;
+    }
+
+
+    if(amountValue <= 0){
+
+        showToast(
+            "Enter a payment amount greater than ₹0."
+        );
+
+        return;
+    }
+
+
+    if(amountValue > 100000){
+
+        showToast(
+            "Maximum simulated payment is ₹1,00,000."
+        );
+
+        return;
+    }
+
+
+    /* Generate reference */
+
+    const random =
+        Math.floor(
+            10000000 +
+            Math.random() * 90000000
+        );
+
+    const reference =
+        "DSB-PAY-" + random;
+
+
+    document.getElementById("referenceId")
+        .textContent = reference;
+
+
+    document.getElementById("successDetails")
+        .innerHTML =
+        "₹" +
+        amountValue.toLocaleString("en-IN",{
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        }) +
+        " paid towards <strong>" +
+        escapeHTML(providerValue) +
+        "</strong> using " +
+        escapeHTML(mode) +
+        ".";
+
+
+    modal.classList.add("show");
+
+
+    /* Save transaction */
+
+    const transaction = {
+
+        id:reference,
+
+        category:selectedCategory,
+
+        provider:providerValue,
+
+        amount:amountValue,
+
+        mode:mode,
+
+        date:new Date().toLocaleString("en-IN"),
+
+        status:"Successful"
+
+    };
+
+
+    const existing =
+        JSON.parse(
+            localStorage.getItem(
+                "devisreeTransactions"
+            ) || "[]"
+        );
+
+
+    existing.unshift(transaction);
+
+
+    localStorage.setItem(
+        "devisreeTransactions",
+        JSON.stringify(existing)
+    );
+
+});
+
+
+/* CLOSE */
+
+function closeModal(){
+
+    modal.classList.remove("show");
+
+    form.reset();
+
+    summaryProvider.textContent = "—";
+
+    summaryAmount.textContent = "₹0.00";
+
+    summaryMode.textContent = "—";
+
+}
+
+
+/* TOAST */
+
+function showToast(message){
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* SECURITY */
+
+function escapeHTML(value){
+
+    return value
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+</script>
+
+</body>
+</html>

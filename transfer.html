@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transfer Money | DeviSree Bank</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#f6f8fb;
+    color:#14213d;
+}
+
+nav{
+    height:76px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    position:sticky;
+    top:0;
+    z-index:100;
+    border-bottom:1px solid #e9edf3;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:21px;
+    font-weight:800;
+    color:#0c2d57;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0c2d57,#1769aa);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.back{
+    color:#1769aa;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+}
+
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:55px 25px 80px;
+}
+
+.heading{
+    margin-bottom:35px;
+}
+
+.heading span{
+    color:#1769aa;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.heading h1{
+    color:#0c2d57;
+    font-size:42px;
+    margin:10px 0;
+}
+
+.heading p{
+    color:#748196;
+    font-size:14px;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:1.7fr 1fr;
+    gap:25px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e6ebf1;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 12px 35px rgba(12,45,87,.05);
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.card-title i{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:#eaf3fb;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.card-title h2{
+    font-size:19px;
+    color:#0c2d57;
+}
+
+.form-group{
+    margin-bottom:19px;
+}
+
+label{
+    display:block;
+    color:#45546a;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #dce3ec;
+    border-radius:10px;
+    outline:none;
+    font-family:inherit;
+    font-size:13px;
+    color:#24364d;
+    background:#fff;
+    transition:.25s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#1769aa;
+    box-shadow:0 0 0 3px rgba(23,105,170,.08);
+}
+
+textarea{
+    resize:none;
+    height:85px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.amount-box{
+    position:relative;
+}
+
+.amount-box span{
+    position:absolute;
+    left:14px;
+    top:13px;
+    color:#64748b;
+    font-weight:700;
+    font-size:14px;
+}
+
+.amount-box input{
+    padding-left:30px;
+}
+
+.transfer-btn{
+    width:100%;
+    border:none;
+    background:#0c2d57;
+    color:white;
+    padding:15px;
+    border-radius:11px;
+    font-family:inherit;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.transfer-btn:hover{
+    background:#1769aa;
+    transform:translateY(-2px);
+}
+
+.security{
+    background:#f3f8fc;
+    border-radius:13px;
+    padding:16px;
+    margin-top:20px;
+    display:flex;
+    gap:12px;
+}
+
+.security i{
+    color:#1769aa;
+}
+
+.security p{
+    color:#728096;
+    font-size:11px;
+    line-height:1.6;
+}
+
+.summary{
+    height:max-content;
+}
+
+.balance{
+    background:linear-gradient(135deg,#0c2d57,#1769aa);
+    border-radius:16px;
+    padding:23px;
+    color:white;
+    margin-bottom:22px;
+}
+
+.balance small{
+    color:#cbdceb;
+    font-size:11px;
+}
+
+.balance h2{
+    font-size:27px;
+    margin-top:7px;
+}
+
+.account-number{
+    font-size:11px;
+    color:#d3e0ed;
+    margin-top:9px;
+}
+
+.summary-list{
+    list-style:none;
+}
+
+.summary-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 0;
+    border-bottom:1px solid #edf0f4;
+    font-size:12px;
+}
+
+.summary-list span{
+    color:#7a8798;
+}
+
+.summary-list strong{
+    color:#263a52;
+    text-align:right;
+}
+
+.demo-note{
+    margin-top:20px;
+    padding:13px;
+    background:#fff9e9;
+    border:1px solid #f0dfac;
+    border-radius:10px;
+    color:#806c34;
+    font-size:10px;
+    line-height:1.6;
+}
+
+/* SUCCESS MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(5,20,38,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:500;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    width:100%;
+    max-width:440px;
+    border-radius:24px;
+    padding:38px;
+    text-align:center;
+    animation:pop .35s ease;
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.9) translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.success-icon{
+    width:75px;
+    height:75px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#eaf8f0;
+    color:#19945b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    animation:success .6s ease;
+}
+
+@keyframes success{
+    0%{transform:scale(.5);opacity:0}
+    70%{transform:scale(1.1)}
+    100%{transform:scale(1)}
+}
+
+.modal-box h2{
+    color:#0c2d57;
+    margin-bottom:9px;
+}
+
+.modal-box > p{
+    color:#748196;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.transaction-id{
+    background:#f5f7fa;
+    border-radius:11px;
+    padding:14px;
+    margin:20px 0;
+}
+
+.transaction-id small{
+    display:block;
+    color:#8995a5;
+    font-size:10px;
+    margin-bottom:5px;
+}
+
+.transaction-id strong{
+    color:#1769aa;
+    font-size:14px;
+    letter-spacing:.5px;
+}
+
+.done-btn{
+    width:100%;
+    border:none;
+    background:#0c2d57;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#0c2d57;
+    color:white;
+    padding:14px 18px;
+    border-radius:11px;
+    font-size:12px;
+    display:none;
+    z-index:800;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.toast.show{
+    display:block;
+    animation:toastIn .3s ease;
+}
+
+@keyframes toastIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:800px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .heading h1{
+        font-size:34px;
+    }
+}
+
+@media(max-width:550px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    .back{
+        font-size:12px;
+    }
+
+    .page{
+        padding:40px 16px;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+DeviSree Bank
+
+</div>
+
+<a href="services.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+&nbsp; Back to Services
+</a>
+
+</nav>
+
+
+<main class="page">
+
+<div class="heading">
+
+<span>Digital Banking</span>
+
+<h1>Transfer Money</h1>
+
+<p>
+Send money securely using your DeviSree Bank digital account.
+</p>
+
+</div>
+
+
+<div class="layout">
+
+<!-- TRANSFER FORM -->
+
+<div class="card">
+
+<div class="card-title">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+<h2>Transfer Details</h2>
+
+</div>
+
+
+<form id="transferForm">
+
+<div class="form-group">
+
+<label for="account">
+Select Account
+</label>
+
+<select id="account" required>
+
+<option value="">
+Choose an account
+</option>
+
+<option value="savings">
+Savings Account — ₹1,24,580.50
+</option>
+
+<option value="current">
+Current Account — ₹82,450.00
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="beneficiary">
+Beneficiary Name
+</label>
+
+<input
+type="text"
+id="beneficiary"
+placeholder="Enter beneficiary name"
+required
+>
+
+</div>
+
+
+<div class="row">
+
+<div class="form-group">
+
+<label for="accountNumber">
+Account Number
+</label>
+
+<input
+type="text"
+id="accountNumber"
+placeholder="Enter account number"
+maxlength="18"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="ifsc">
+IFSC Code
+</label>
+
+<input
+type="text"
+id="ifsc"
+placeholder="e.g. DSVB0001234"
+style="text-transform:uppercase"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div class="form-group">
+
+<label for="amount">
+Amount
+</label>
+
+<div class="amount-box">
+
+<span>₹</span>
+
+<input
+type="number"
+id="amount"
+placeholder="0.00"
+min="1"
+max="500000"
+step="0.01"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="type">
+Transfer Type
+</label>
+
+<select id="type" required>
+
+<option value="">
+Select type
+</option>
+
+<option>IMPS</option>
+
+<option>NEFT</option>
+
+<option>RTGS</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="remarks">
+Remarks
+</label>
+
+<textarea
+id="remarks"
+placeholder="Optional transfer note"
+maxlength="100"
+></textarea>
+
+</div>
+
+
+<button type="submit" class="transfer-btn">
+
+Continue Transfer
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+<div class="security">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<p>
+This is a simulated banking transaction for the
+DeviSree Bank application. No real money will be
+transferred.
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="card summary">
+
+<div class="balance">
+
+<small>Available Balance</small>
+
+<h2>₹1,24,580.50</h2>
+
+<div class="account-number">
+A/C •••• •••• 4826
+</div>
+
+</div>
+
+
+<h3 style="color:#0c2d57;font-size:16px;margin-bottom:8px;">
+Transfer Summary
+</h3>
+
+<ul class="summary-list">
+
+<li>
+<span>Transfer mode</span>
+<strong id="summaryType">—</strong>
+</li>
+
+<li>
+<span>Beneficiary</span>
+<strong id="summaryBeneficiary">—</strong>
+</li>
+
+<li>
+<span>Amount</span>
+<strong id="summaryAmount">₹0.00</strong>
+</li>
+
+<li>
+<span>Estimated fee</span>
+<strong>₹0.00</strong>
+</li>
+
+</ul>
+
+
+<div class="demo-note">
+
+<i class="fa-solid fa-circle-info"></i>
+
+&nbsp;
+For this college project, transactions are simulated
+locally and do not connect to a real bank.
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- SUCCESS MODAL -->
+
+<div class="modal" id="successModal">
+
+<div class="modal-box">
+
+<div class="success-icon">
+
+<i class="fa-solid fa-check"></i>
+
+</div>
+
+<h2>Transfer Successful</h2>
+
+<p>
+Your simulated transfer has been completed successfully.
+</p>
+
+<div class="transaction-id">
+
+<small>TRANSACTION REFERENCE ID</small>
+
+<strong id="transactionId">
+DSB-00000000
+</strong>
+
+</div>
+
+<p id="successDetails"></p>
+
+<button class="done-btn" onclick="closeModal()">
+Done
+</button>
+
+</div>
+
+</div>
+
+
+<div class="toast" id="toast">
+Please complete all required fields.
+</div>
+
+
+<script>
+
+const form = document.getElementById("transferForm");
+
+const amountInput = document.getElementById("amount");
+
+const typeInput = document.getElementById("type");
+
+const beneficiaryInput = document.getElementById("beneficiary");
+
+const summaryAmount = document.getElementById("summaryAmount");
+
+const summaryType = document.getElementById("summaryType");
+
+const summaryBeneficiary =
+document.getElementById("summaryBeneficiary");
+
+const modal = document.getElementById("successModal");
+
+const transactionId =
+document.getElementById("transactionId");
+
+const successDetails =
+document.getElementById("successDetails");
+
+const toast =
+document.getElementById("toast");
+
+
+/* LIVE SUMMARY */
+
+amountInput.addEventListener("input", updateSummary);
+
+typeInput.addEventListener("change", updateSummary);
+
+beneficiaryInput.addEventListener("input", updateSummary);
+
+
+function updateSummary(){
+
+    const amount = Number(amountInput.value) || 0;
+
+    summaryAmount.textContent =
+        "₹" + amount.toLocaleString("en-IN",{
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        });
+
+    summaryType.textContent =
+        typeInput.value || "—";
+
+    summaryBeneficiary.textContent =
+        beneficiaryInput.value || "—";
+}
+
+
+/* FORM */
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const account =
+        document.getElementById("account").value;
+
+    const beneficiary =
+        beneficiaryInput.value.trim();
+
+    const accountNumber =
+        document.getElementById("accountNumber").value.trim();
+
+    const ifsc =
+        document.getElementById("ifsc").value.trim();
+
+    const amount =
+        Number(amountInput.value);
+
+    const type =
+        typeInput.value;
+
+
+    if(!account || !beneficiary ||
+       !accountNumber || !ifsc ||
+       !amount || !type){
+
+        showToast("Please complete all required fields.");
+
+        return;
+    }
+
+
+    if(accountNumber.length < 8){
+
+        showToast("Please enter a valid account number.");
+
+        return;
+    }
+
+
+    if(!/^[A-Za-z]{4}0[A-Za-z0-9]{6}$/.test(ifsc)){
+
+        showToast("Please enter a valid IFSC format.");
+
+        return;
+    }
+
+
+    if(amount <= 0){
+
+        showToast("Enter an amount greater than ₹0.");
+
+        return;
+    }
+
+
+    if(amount > 500000){
+
+        showToast("Maximum simulated transfer is ₹5,00,000.");
+
+        return;
+    }
+
+
+    /* Generate simulated reference */
+
+    const randomNumber =
+        Math.floor(10000000 + Math.random() * 90000000);
+
+    const reference =
+        "DSB-" + randomNumber;
+
+
+    transactionId.textContent = reference;
+
+
+    successDetails.innerHTML =
+        "₹" +
+        amount.toLocaleString("en-IN",{
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        }) +
+        " sent to <strong>" +
+        escapeHTML(beneficiary) +
+        "</strong> via " +
+        type +
+        ".";
+
+
+    modal.classList.add("show");
+
+
+    /* Save simulated transaction */
+
+    const transaction = {
+
+        id:reference,
+
+        beneficiary:beneficiary,
+
+        amount:amount,
+
+        type:type,
+
+        date:new Date().toLocaleString("en-IN"),
+
+        status:"Successful"
+
+    };
+
+
+    const existing =
+        JSON.parse(
+            localStorage.getItem("devisreeTransactions") || "[]"
+        );
+
+
+    existing.unshift(transaction);
+
+
+    localStorage.setItem(
+        "devisreeTransactions",
+        JSON.stringify(existing)
+    );
+
+});
+
+
+function closeModal(){
+
+    modal.classList.remove("show");
+
+    form.reset();
+
+    updateSummary();
+
+}
+
+
+function showToast(message){
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* Prevent HTML injection in demo output */
+
+function escapeHTML(value){
+
+    return value
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+</script>
+
+</body>
+</html>

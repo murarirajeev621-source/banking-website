@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | DeviSree Bank</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f7f9fc;
+            color: #14213d;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 76px;
+            background: rgba(255,255,255,0.97);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #edf0f5;
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #0c2d57;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0c2d57, #1769aa);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #536174;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1769aa;
+        }
+
+        .login-btn {
+            background: #0c2d57;
+            color: white !important;
+            padding: 12px 21px;
+            border-radius: 10px;
+        }
+
+        /* PAGE HEADER */
+
+        .page-header {
+            background: linear-gradient(135deg, #0c2d57, #1769aa);
+            color: white;
+            padding: 85px 7%;
+        }
+
+        .page-header small {
+            color: #d8c17b;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(42px, 5vw, 60px);
+            margin: 12px 0;
+        }
+
+        .page-header p {
+            max-width: 650px;
+            color: #d7e4f1;
+            line-height: 1.8;
+        }
+
+        /* ABOUT INTRO */
+
+        .about-section {
+            padding: 85px 7%;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .intro span {
+            color: #1769aa;
+            font-weight: 800;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .intro h2 {
+            font-size: 38px;
+            color: #0c2d57;
+            margin: 12px 0 20px;
+        }
+
+        .intro p {
+            color: #6d7b8f;
+            line-height: 1.9;
+        }
+
+        /* LEADERSHIP */
+
+        .leadership {
+            margin-top: 65px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #1769aa;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            color: #0c2d57;
+            font-size: 36px;
+            margin-top: 8px;
+        }
+
+        .leaders {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+       .leader-card{
+     background:#ffffff;
+     border:1px solid #e3eaf2;
+     border-radius:22px;
+     padding:30px;
+     display:flex;
+     align-items:center;
+     gap:32px;
+     box-shadow:0 12px 35px rgba(12,45,87,.07);
+     transition:transform .3s ease, box-shadow .3s ease;
+     overflow:hidden;
+}
+
+.leader-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 45px rgba(12,45,87,.13);
+}
+
+.leader-photo{
+    width:270px;
+    height:320px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:20px;
+    border:3px solid #eef4f9;
+    box-shadow:0 12px 28px rgba(12,45,87,.14);
+    flex-shrink:0;
+}
+
+.leader-card .role{
+    display:inline-block;
+    color:#1769aa;
+    background:#eef6fc;
+    padding:7px 11px;
+    border-radius:7px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.3px;
+    margin-bottom:10px;
+}
+
+.leader-card h3{
+    color:#0c2d57;
+    font-size:22px;
+    margin-bottom:9px;
+}
+
+.leader-card p{
+    color:#718096;
+    font-size:11px;
+    line-height:1.7;
+    max-width:430px;
+}
+        /* EXECUTIVE TEAM */
+
+        .executives {
+            margin-top: 80px;
+        }
+
+        .executive-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .executive-card {
+            background: white;
+            border: 1px solid #e9edf3;
+            border-radius: 18px;
+            padding: 25px;
+            transition: .3s;
+        }
+
+        .executive-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 40px rgba(12,45,87,.09);
+        }
+
+        .executive-icon {
+            width: 50px;
+            height: 50px;
+            background: #eaf3fb;
+            color: #1769aa;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .executive-card h3 {
+            color: #173352;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .executive-card p {
+            color: #78869a;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* GROUP PHOTO */
+
+        .team-photo-section {
+            margin-top: 80px;
+        }
+
+        .team-photo-box {
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(12,45,87,.14);
+        }
+
+        .team-photo-box img {
+            width: 100%;
+            display: block;
+            max-height: 520px;
+            object-fit: cover;
+            transition: transform .6s;
+        }
+
+        .team-photo-box{
+    width:100%;
+    max-width:780px;
+    margin:35px auto 0;
+    border-radius:24px;
+    overflow:hidden;
+    background:#ffffff;
+    border:1px solid #e3eaf2;
+    box-shadow:0 18px 45px rgba(12,45,87,.10);
+    position:relative;
+}
+
+.team-photo-box img{
+    width:100%;
+    height:320px;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+    transition:transform .7s ease;
+}
+
+     .team-photo-box:hover img{
+     transform:scale(1.035);
+     }
+
+        /* FOOTER */
+
+        footer {
+            background: #081d38;
+            color: white;
+            padding: 45px 7% 25px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-brand h3 {
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: #9eafc3;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #9eafc3;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 9px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.1);
+            margin-top: 30px;
+            padding-top: 18px;
+            color: #8092a8;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px) {
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .leaders {
+                grid-template-columns: 1fr;
+            }
+
+            .executive-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links a:not(.login-btn) {
+                display: none;
+            }
+
+            .page-header {
+                padding: 60px 5%;
+            }
+
+            .about-section {
+                padding: 60px 5%;
+            }
+
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .leader-photo {
+                width: 180px;
+                height: 210px;
+            }
+
+            .executive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mission {
+                padding: 35px 22px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+        }
+        @media(max-width:650px){
+
+    .leader-card{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    .leader-photo{
+        width:135px;
+        height:155px;
+    }
+
+    .leader-card p{
+        margin:auto;
+    }
+}
+ @media(max-width:650px){
+
+    .team-photo-box{
+        border-radius:16px;
+    }
+
+    .team-photo-box img{
+        height:260px;
+    }
+ }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            DeviSree Bank
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+            <a href="accounts.html">
+                Accounts
+            </a>
+
+            <a href="cards.html">
+                Cards
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <small>
+            About DeviSree Bank
+        </small>
+
+        <h1>
+            Banking with purpose.
+        </h1>
+
+        <p>
+            DeviSree Bank combines trusted banking principles
+            with modern digital technology to create simpler,
+            smarter and more secure financial experiences.
+        </p>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="about-section">
+
+        <div class="intro">
+
+            <span>
+                Who We Are
+            </span>
+
+            <h2>
+                Built on trust. Driven by innovation.
+            </h2>
+
+            <p>
+                DeviSree Bank is a modern digital banking institution
+                focused on delivering secure, accessible and intelligent
+                financial services. Our approach brings together
+                technology, thoughtful design and customer-first
+                banking to create a seamless digital experience.
+            </p>
+
+        </div>
+
+
+        <!-- LEADERSHIP -->
+
+        <div class="leadership">
+
+            <div class="section-title">
+
+                <span>
+                    Leadership
+                </span>
+
+                <h2>
+                    Guiding DeviSree Bank
+                </h2>
+
+            </div>
+
+
+            <div class="leaders">
+
+                <!-- SIR -->
+
+                <div class="leader-card">
+
+                    <img
+                        src="./assets/team/sir.jpg.jpeg"
+                        alt="Dr. Prem Kumar"
+                        class="leader-photo"
+                    >
+
+                    <div>
+
+                        <div class="role">
+                            Chairman & Chief Mentor
+                        </div>
+
+                        <h3>
+                            Dr. Prem Kumar
+                        </h3>
+
+                        <p>
+                            Providing strategic guidance and mentorship
+                            with a focus on technology, trust and
+                            excellence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- YOU -->
+
+                <div class="leader-card">
+
+                    <img
+                        src="./assets/team/devi.jpg.jpeg"
+                        alt="Devi Sree"
+                        class="leader-photo"
+                    >
+
+                    <div>
+
+                        <div class="role">
+                            Director — Technology & Digital Banking
+                        </div>
+
+                        <h3>
+                            Devi Sree
+                        </h3>
+
+                        <p>
+                            Leading digital banking initiatives with
+                            a focus on technology, intuitive experiences
+                            and secure digital services.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXECUTIVE TEAM -->
+
+        <div class="executives">
+
+            <div class="section-title">
+
+                <span>
+                    Executive Leadership
+                </span>
+
+                <h2>
+                    The team behind DeviSree Bank
+                </h2>
+
+            </div>
+
+
+            <div class="executive-grid">
+
+                <div class="executive-card">
+
+                    <div class="executive-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+
+                    <h3>
+                        Chief Technology Officer
+                    </h3>
+
+                    <p>
+                        Leading technology strategy and
+                        digital infrastructure.
+                    </p>
+
+                </div>
+
+
+                <div class="executive-card">
+
+                    <div class="executive-icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+
+                    <h3>
+                        Head of Digital Operations
+                    </h3>
+
+                    <p>
+                        Ensuring reliable and efficient
+                        digital banking operations.
+                    </p>
+
+                </div>
+
+
+                <div class="executive-card">
+
+                    <div class="executive-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <h3>
+                        Head of Customer Experience
+                    </h3>
+
+                    <p>
+                        Designing thoughtful and
+                        customer-focused banking journeys.
+                    </p>
+
+                </div>
+
+
+                <div class="executive-card">
+
+                    <div class="executive-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h3>
+                        Finance & Risk Manager
+                    </h3>
+
+                    <p>
+                        Supporting financial strength,
+                        stability and responsible banking.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GROUP PHOTO -->
+
+        <div class="team-photo-section">
+
+            <div class="section-title">
+
+                <span>
+                    Our Leadership Team
+                </span>
+
+                <h2>
+                    Together, we move banking forward.
+                </h2>
+
+            </div>
+
+
+            <div class="team-photo-box">
+
+              <img src="./assets/team/group.jpg1.png" alt="DeviSree Bank Leadership Team" style="width:100%; height:430px; object-fit:cover;">
+            </div>
+
+        </div>
+
+
+        <!-- MISSION -->
+
+        <div class="mission">
+
+            <h2>
+                Our Mission
+            </h2>
+
+            <p>
+                To make banking simpler, smarter and more accessible
+                through secure technology, thoughtful innovation and
+                a commitment to the people we serve.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>
+                    DeviSree Bank
+                </h3>
+
+                <p>
+                    A modern digital banking experience built
+                    around security, simplicity and smarter
+                    financial management.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+
+                    <h4>
+                        Banking
+                    </h4>
+
+                    <a href="accounts.html">
+                        Accounts
+                    </a>
+
+                    <a href="cards.html">
+                        Cards
+                    </a>
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        Company
+                    </h4>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 DeviSree Bank. All rights reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

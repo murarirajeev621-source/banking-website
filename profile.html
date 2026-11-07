@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile | DeviSree Bank</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#f6f8fb;
+    color:#14213d;
+}
+
+/* NAVBAR */
+
+nav{
+    height:76px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    border-bottom:1px solid #e8edf3;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#0c2d57;
+    font-size:21px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0c2d57,#1769aa);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.back{
+    text-decoration:none;
+    color:#1769aa;
+    font-size:13px;
+    font-weight:700;
+}
+
+/* PAGE */
+
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:50px 25px 80px;
+}
+
+.heading{
+    margin-bottom:30px;
+}
+
+.heading span{
+    color:#1769aa;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.heading h1{
+    color:#0c2d57;
+    font-size:40px;
+    margin:9px 0;
+}
+
+.heading p{
+    color:#748196;
+    font-size:13px;
+}
+
+/* PROFILE HEADER */
+
+.profile-header{
+    background:linear-gradient(135deg,#0c2d57,#1769aa);
+    border-radius:22px;
+    padding:30px;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    margin-bottom:24px;
+    box-shadow:0 15px 40px rgba(12,45,87,.12);
+}
+
+.profile-info{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.avatar{
+    width:86px;
+    height:86px;
+    border-radius:50%;
+    background:#eaf3fb;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    border:4px solid rgba(255,255,255,.3);
+}
+
+.profile-info h2{
+    font-size:24px;
+    margin-bottom:6px;
+}
+
+.profile-info p{
+    color:#cbdceb;
+    font-size:12px;
+}
+
+.account-number{
+    margin-top:10px;
+    font-size:11px;
+    color:#dce9f5;
+}
+
+.edit-btn{
+    border:1px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.1);
+    color:white;
+    padding:11px 17px;
+    border-radius:9px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:700;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e5ebf1;
+    border-radius:19px;
+    padding:27px;
+    box-shadow:0 10px 30px rgba(12,45,87,.04);
+}
+
+.card.full{
+    grid-column:1 / -1;
+}
+
+.card-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:23px;
+}
+
+.card-title i{
+    width:40px;
+    height:40px;
+    border-radius:11px;
+    background:#eaf3fb;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.card-title h3{
+    color:#0c2d57;
+    font-size:16px;
+}
+
+.card-title p{
+    color:#8995a5;
+    font-size:10px;
+    margin-top:3px;
+}
+
+/* DETAILS */
+
+.details{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.detail{
+    padding-bottom:15px;
+    border-bottom:1px solid #edf0f4;
+}
+
+.detail label{
+    display:block;
+    color:#8a96a5;
+    font-size:10px;
+    margin-bottom:6px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.detail strong{
+    color:#31445b;
+    font-size:12px;
+}
+
+/* SECURITY */
+
+.security-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:17px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.security-row:last-child{
+    border-bottom:none;
+}
+
+.security-left{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.security-icon{
+    width:39px;
+    height:39px;
+    border-radius:10px;
+    background:#f1f5f9;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.security-left strong{
+    display:block;
+    color:#30445b;
+    font-size:12px;
+}
+
+.security-left small{
+    display:block;
+    color:#8a96a5;
+    font-size:10px;
+    margin-top:4px;
+}
+
+/* TOGGLE */
+
+.switch{
+    position:relative;
+    width:44px;
+    height:24px;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.slider{
+    position:absolute;
+    inset:0;
+    background:#cbd5e1;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    left:3px;
+    top:3px;
+    background:white;
+    border-radius:50%;
+    transition:.3s;
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+
+.switch input:checked + .slider{
+    background:#1769aa;
+}
+
+.switch input:checked + .slider:before{
+    transform:translateX(20px);
+}
+
+/* FORM */
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group label{
+    display:block;
+    color:#536174;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.input-box{
+    position:relative;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px 40px 12px 13px;
+    border:1px solid #dce3ec;
+    border-radius:9px;
+    outline:none;
+    font-family:inherit;
+    font-size:12px;
+}
+
+.input-box input:focus{
+    border-color:#1769aa;
+    box-shadow:0 0 0 3px rgba(23,105,170,.08);
+}
+
+.eye{
+    position:absolute;
+    right:13px;
+    top:12px;
+    border:none;
+    background:none;
+    color:#8190a2;
+    cursor:pointer;
+}
+
+.change-btn{
+    width:100%;
+    border:none;
+    background:#0c2d57;
+    color:white;
+    padding:13px;
+    border-radius:9px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:700;
+    font-size:12px;
+}
+
+.change-btn:hover{
+    background:#1769aa;
+}
+
+/* LOGOUT */
+
+.logout-section{
+    margin-top:22px;
+    background:white;
+    border:1px solid #f0d9d9;
+    border-radius:19px;
+    padding:22px 27px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logout-section h3{
+    color:#37475a;
+    font-size:14px;
+}
+
+.logout-section p{
+    color:#8b96a5;
+    font-size:10px;
+    margin-top:5px;
+}
+
+.logout-btn{
+    border:1px solid #e5bcbc;
+    background:#fff8f8;
+    color:#c64b4b;
+    padding:11px 18px;
+    border-radius:9px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:700;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(5,20,38,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:500;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    width:100%;
+    max-width:390px;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+.modal-box i{
+    font-size:34px;
+    color:#c64b4b;
+    margin-bottom:15px;
+}
+
+.modal-box h2{
+    color:#0c2d57;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.modal-box p{
+    color:#7b8798;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.modal-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:22px;
+}
+
+.modal-buttons button{
+    flex:1;
+    padding:12px;
+    border-radius:9px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:700;
+}
+
+.cancel{
+    border:1px solid #dce3ec;
+    background:white;
+    color:#536174;
+}
+
+.confirm{
+    border:none;
+    background:#c64b4b;
+    color:white;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#0c2d57;
+    color:white;
+    padding:14px 18px;
+    border-radius:10px;
+    font-size:11px;
+    display:none;
+    z-index:800;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.toast.show{
+    display:block;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:750px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card.full{
+        grid-column:auto;
+    }
+
+    .profile-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .details{
+        grid-template-columns:1fr;
+    }
+
+    .logout-section{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:500px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    .page{
+        padding:40px 16px;
+    }
+
+    .profile-info{
+        align-items:flex-start;
+    }
+
+    .avatar{
+        width:70px;
+        height:70px;
+        font-size:25px;
+    }
+
+    .profile-info h2{
+        font-size:20px;
+    }
+
+    .card{
+        padding:21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+DeviSree Bank
+
+</div>
+
+<a href="dashboard.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+&nbsp; Back to Dashboard
+</a>
+
+</nav>
+
+
+<main class="page">
+
+<div class="heading">
+
+<span>Account Settings</span>
+
+<h1>My Profile</h1>
+
+<p>
+Manage your personal information and security preferences.
+</p>
+
+</div>
+
+
+<!-- PROFILE HEADER -->
+
+<section class="profile-header">
+
+<div class="profile-info">
+
+<div class="avatar">
+<i class="fa-solid fa-user"></i>
+</div>
+
+<div>
+
+<h2>Devi Sree</h2>
+
+<p>Premium Banking Customer</p>
+
+<div class="account-number">
+Account No. •••• •••• 4582
+</div>
+
+</div>
+
+</div>
+
+<button class="edit-btn" onclick="showToast('Profile editing enabled')">
+<i class="fa-solid fa-pen"></i>
+&nbsp; Edit Profile
+</button>
+
+</section>
+
+
+<div class="grid">
+
+
+<!-- PERSONAL DETAILS -->
+
+<div class="card">
+
+<div class="card-title">
+
+<i class="fa-solid fa-user"></i>
+
+<div>
+<h3>Personal Information</h3>
+<p>Your registered customer details</p>
+</div>
+
+</div>
+
+
+<div class="details">
+
+<div class="detail">
+
+<label>Full Name</label>
+
+<strong>Devi Sree</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Customer ID</label>
+
+<strong>DSB1004826</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Email Address</label>
+
+<strong>devisree@example.com</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Phone Number</label>
+
+<strong>+91 ••••• ••482</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Date of Birth</label>
+
+<strong>•• / •• / 2004</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Address</label>
+
+<strong>Kurnool, Andhra Pradesh</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ACCOUNT DETAILS -->
+
+<div class="card">
+
+<div class="card-title">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<div>
+<h3>Account Information</h3>
+<p>Your banking relationship</p>
+</div>
+
+</div>
+
+
+<div class="details">
+
+<div class="detail">
+
+<label>Account Type</label>
+
+<strong>Savings Account</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Account Number</label>
+
+<strong>•••• •••• 4582</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>IFSC Code</label>
+
+<strong>DSVB0001024</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Branch</label>
+
+<strong>DeviSree Digital Branch</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Account Status</label>
+
+<strong style="color:#15915a;">
+Active
+</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Member Since</label>
+
+<strong>June 2024</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SECURITY -->
+
+<div class="card full">
+
+<div class="card-title">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<div>
+<h3>Security Settings</h3>
+<p>Protect your account with additional security controls</p>
+</div>
+
+</div>
+
+
+<div class="security-row">
+
+<div class="security-left">
+
+<div class="security-icon">
+<i class="fa-solid fa-mobile-screen"></i>
+</div>
+
+<div>
+
+<strong>Two-Factor Authentication</strong>
+
+<small>
+Add an extra layer of protection during login
+</small>
+
+</div>
+
+</div>
+
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="twoFactor"
+>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<div class="security-row">
+
+<div class="security-left">
+
+<div class="security-icon">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+<div>
+
+<strong>Transaction Alerts</strong>
+
+<small>
+Receive notifications for account activity
+</small>
+
+</div>
+
+</div>
+
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="alerts"
+checked
+>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<div class="security-row">
+
+<div class="security-left">
+
+<div class="security-icon">
+<i class="fa-solid fa-fingerprint"></i>
+</div>
+
+<div>
+
+<strong>Biometric Login</strong>
+
+<small>
+Use supported device authentication
+</small>
+
+</div>
+
+</div>
+
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="biometric"
+>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+
+<!-- CHANGE PASSWORD -->
+
+<div class="card">
+
+<div class="card-title">
+
+<i class="fa-solid fa-key"></i>
+
+<div>
+<h3>Change Password</h3>
+<p>Update your login password</p>
+</div>
+
+</div>
+
+
+<form id="passwordForm">
+
+<div class="form-group">
+
+<label>Current Password</label>
+
+<div class="input-box">
+
+<input
+type="password"
+id="currentPassword"
+placeholder="Enter current password"
+required
+>
+
+<button
+type="button"
+class="eye"
+onclick="togglePassword('currentPassword',this)"
+>
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>New Password</label>
+
+<div class="input-box">
+
+<input
+type="password"
+id="newPassword"
+placeholder="Minimum 8 characters"
+required
+>
+
+<button
+type="button"
+class="eye"
+onclick="togglePassword('newPassword',this)"
+>
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Confirm New Password</label>
+
+<div class="input-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Re-enter new password"
+required
+>
+
+<button
+type="button"
+class="eye"
+onclick="togglePassword('confirmPassword',this)"
+>
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+
+<button class="change-btn" type="submit">
+
+Update Password
+
+</button>
+
+</form>
+
+</div>
+
+
+<!-- SESSION -->
+
+<div class="card">
+
+<div class="card-title">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<div>
+<h3>Login Activity</h3>
+<p>Recent account access</p>
+</div>
+
+</div>
+
+
+<div class="detail" style="margin-bottom:17px;">
+
+<label>Last Login</label>
+
+<strong>
+Today, 10:42 AM
+</strong>
+
+</div>
+
+
+<div class="detail" style="margin-bottom:17px;">
+
+<label>Device</label>
+
+<strong>
+Windows • Chrome Browser
+</strong>
+
+</div>
+
+
+<div class="detail">
+
+<label>Session Status</label>
+
+<strong style="color:#15915a;">
+<i class="fa-solid fa-circle" style="font-size:7px;"></i>
+&nbsp; Active
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LOGOUT -->
+
+<div class="logout-section">
+
+<div>
+
+<h3>Sign out of DeviSree Bank</h3>
+
+<p>
+End your current banking session securely.
+</p>
+
+</div>
+
+<button class="logout-btn" onclick="openLogoutModal()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+&nbsp; Logout
+
+</button>
+
+</div>
+
+</main>
+
+
+<!-- LOGOUT MODAL -->
+
+<div class="modal" id="logoutModal">
+
+<div class="modal-box">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<h2>Logout from your account?</h2>
+
+<p>
+You will be signed out of this simulated banking session.
+</p>
+
+<div class="modal-buttons">
+
+<button class="cancel" onclick="closeLogoutModal()">
+Cancel
+</button>
+
+<button class="confirm" onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* PASSWORD VISIBILITY */
+
+function togglePassword(id,button){
+
+    const input =
+        document.getElementById(id);
+
+    const icon =
+        button.querySelector("i");
+
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        icon.classList.remove("fa-eye");
+
+        icon.classList.add("fa-eye-slash");
+
+    }else{
+
+        input.type = "password";
+
+        icon.classList.remove("fa-eye-slash");
+
+        icon.classList.add("fa-eye");
+
+    }
+
+}
+
+
+/* PASSWORD FORM */
+
+document
+.getElementById("passwordForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+
+    const current =
+        document.getElementById("currentPassword").value;
+
+    const newPassword =
+        document.getElementById("newPassword").value;
+
+    const confirm =
+        document.getElementById("confirmPassword").value;
+
+
+    if(current.length === 0){
+
+        showToast("Enter your current password.");
+
+        return;
+
+    }
+
+
+    if(newPassword.length < 8){
+
+        showToast(
+            "New password must contain at least 8 characters."
+        );
+
+        return;
+
+    }
+
+
+    if(newPassword !== confirm){
+
+        showToast(
+            "New passwords do not match."
+        );
+
+        return;
+
+    }
+
+
+    showToast(
+        "Password updated successfully."
+    );
+
+
+    document
+    .getElementById("passwordForm")
+    .reset();
+
+});
+
+
+/* TWO FACTOR */
+
+document
+.getElementById("twoFactor")
+.addEventListener("change",function(){
+
+    if(this.checked){
+
+        showToast(
+            "Two-factor authentication enabled."
+        );
+
+    }else{
+
+        showToast(
+            "Two-factor authentication disabled."
+        );
+
+    }
+
+});
+
+
+/* ALERTS */
+
+document
+.getElementById("alerts")
+.addEventListener("change",function(){
+
+    showToast(
+        this.checked
+        ? "Transaction alerts enabled."
+        : "Transaction alerts disabled."
+    );
+
+});
+
+
+/* BIOMETRIC */
+
+document
+.getElementById("biometric")
+.addEventListener("change",function(){
+
+    showToast(
+        this.checked
+        ? "Biometric login enabled."
+        : "Biometric login disabled."
+    );
+
+});
+
+
+/* LOGOUT MODAL */
+
+function openLogoutModal(){
+
+    document
+    .getElementById("logoutModal")
+    .classList.add("show");
+
+}
+
+
+function closeLogoutModal(){
+
+    document
+    .getElementById("logoutModal")
+    .classList.remove("show");
+
+}
+
+
+/* LOGOUT */
+
+function logout(){
+
+    localStorage.removeItem("devisreeLoggedIn");
+
+    localStorage.removeItem("devisreeUser");
+
+    closeLogoutModal();
+
+    showToast("You have been logged out.");
+
+    setTimeout(function(){
+
+        window.location.href = "login.html";
+
+    },900);
+
+}
+
+
+/* TOAST */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+</script>
+
+</body>
+</html>
